@@ -1,0 +1,96 @@
+.wrapper1{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.firstdiv{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: aqua; */
+}
+.secondiv{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    flex-wrap: nowrap;
+    width: 25%;
+    align-items: center;
+   
+}
+.Naseer{
+    width: 50px;
+    border-radius: 20px;
+    clip-path: circle();
+}
+.Ellipse{
+    position: absolute;
+    /* right: 20px; */
+    width: 8px;
+    top: 30px;
+    left: calc(80% + 47px) ;
+    /* position: relative; */
+    /* bottom: 10000px; */
+    /* right: 0; */
+}
+.hamburger {
+   display: none;
+}
+.dropdown{
+    display: none;
+    /* transition: ; */
+}
+.link1{
+    /* list-style: none; */
+    text-decoration: none;
+}
+.link22{
+    /* list-style: none; */
+    text-decoration: none;
+}
+
+
+@media (max-width: 1200px) {
+    .secondiv{
+        width: 25%;
+    }
+}
+@media (max-width: 860px) {
+    .secondiv{
+        width: 30%;
+    }
+}
+@media (max-width: 784px) {
+    .secondiv{
+        width: 33%;
+    }
+}
+@media (max-width: 650px) {
+    .secondiv{
+        display: none;
+    }
+    .hamburger div{
+        /* display: block; */
+        width: 40px;
+        height: 6px;
+        background-color: purple;
+        margin-top: 2px;
+        align-items: center;
+    }
+    .hamburger{
+        align-items: center;
+        margin-top: 7px;
+        display: block;
+    }
+    .Ellipse{
+        display: none;
+    }
+    .dropdown{
+        
+        background-color: green;
+        width: 50%;
+        /* height: 200px; */
+        position: absolute;
+        top: 5%;
+    }
+    
+}
