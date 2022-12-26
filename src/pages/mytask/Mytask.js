@@ -7,17 +7,17 @@ import Navbar from "../Navbar";
 
 const Mytask = () => {
   const [tasks, setTasks] = useState([]);
-  const url = "https://taskmanagerapi.onrender.com/tasks";
+  const url = "https://taskdd.onrender.com/tasks";
 
   const redirect = useNavigate();
 
 
 
   const handleDelete = (id) => {
-    fetch(`https://taskmanagerapi.onrender.com/tasks/${id}`, {
+    fetch(`https://taskdd.onrender.com/tasks/${id}`, {
       method: "DELETE",
     }).then(() => {
-      redirect("/")
+      redirect("/tasks")
     })
   }
 

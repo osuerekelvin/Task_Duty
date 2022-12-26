@@ -10,7 +10,7 @@ const Newtask = () => {
   const [tag, setTag] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const url = "https://taskmanagerapi.onrender.com/tasks"
+  const url = "https://taskdd.onrender.com/tasks"
   const redirect = useNavigate()
 
   const handleSubmit = (e) => {
@@ -22,39 +22,44 @@ const Newtask = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     }).then(() => {
-      redirect("/")
+      redirect("/tasks")
+
     })
 
   };
   return (
-   <div>
-    <Navbar  text2={'All tasks'}/>
-     <div className='parent'>
+    <div>
+      <Navbar text2={'All tasks'} />
+      <div className='parent'>
         <div className='child1'>
-            <img src={arrow} alt="" />
-            <h1 className='h111'>New Task</h1>
+          <img src={arrow} alt="" />
+          <h1 className='h111'>New Task</h1>
         </div>
-       <form onSubmit={handleSubmit}>
-       <fieldset className='inp_legend1' >
-          <textarea name="" id="" value={title} onChange={(e) => setTitle(e.target.value)} cols="30" rows="10" className="inp"placeholder="E.g Project Defense, Assignment" ></textarea>
+        <form onSubmit={handleSubmit}>
+          <fieldset className='inp_legend1' >
+            <textarea name="" id="" value={title} onChange={(e) => setTitle(e.target.value)} cols="30" rows="10" className="inp" placeholder="E.g Project Defense, Assignment" ></textarea>
             <legend><span>Task Title</span> </legend>
-        </fieldset>
-        <fieldset className='inp_legend2' >
-          <textarea name="" id="" value={description}onChange={(e) => setDescription(e.target.value)} cols="30" rows="10" className="inp2" placeholder="Briefly describe your task..."></textarea>
+          </fieldset>
+          <fieldset className='inp_legend2' >
+            <textarea name="" id="" value={description} onChange={(e) => setDescription(e.target.value)} cols="30" rows="10" className="inp2" placeholder="Briefly describe your task..."></textarea>
             <legend><span>Description</span></legend>
-        </fieldset>
-        <fieldset className='inp_legend1' >
-          <textarea name="" id="" value={tag} onChange={(e) => setTag(e.target.value)} cols="30" rows="10" className="inp"></textarea>
-            <legend><span>Tags</span> </legend>
-        </fieldset>
-       </form>
-        
-        <button className="done_btn" onClick={handleSubmit} type="submit">DONE</button>
-        <h3><a href="">Back To Top</a></h3>
-      
-        
+          </fieldset>
+          
+          <fieldset className='inp_legend1' >
+            <textarea name="" id="" value={tag} onChange={(e) => setTag(e.target.value)} cols="30" rows="10" className="inp" placeholder="E.g Urgent, Important, Necessary" ></textarea>
+          <legend><span>Tags</span> </legend>
+          </fieldset>
+           
+          <button className="done_btn1" type="submit" >DONE</button>
+
+        </form>
+
+
+        <h3><a href="/tasks">Back To Top</a></h3>
+
+
+      </div>
     </div>
-   </div>
   )
 }
 

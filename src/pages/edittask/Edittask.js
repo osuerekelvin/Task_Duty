@@ -10,7 +10,7 @@ const Edittask = () => {
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
   const { id } = useParams()
-  const url = `https://taskmanagerapi.onrender.com/tasks/${id}`;
+  const url = `https://taskdd.onrender.com/tasks/${id}`;
   const redirect = useNavigate()
   const getData = () => {
     fetch(url).then((res) => res.json()).then((result) => {
